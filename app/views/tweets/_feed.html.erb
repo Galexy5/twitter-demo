@@ -1,16 +1,20 @@
 <div class="column is-half">
-<article class="media box">
-<figure class="media-left">
-  <p class="image is-64x64">
-    <img src="https://icons-for-free.com/iconfiles/png/512/vader+icon-1320195317918959484.png">
-  </p>
+   <% if user_signed_in? %>
+    <article class="media box">
+    <figure class="media-left">
+      <p class="image is-64x64">
+        <img src="https://icons-for-free.com/iconfiles/png/512/vader+icon-1320195317918959484.png">
+      </p>
 
-</figure>
-<div class="media-content">
-  <%= render 'tweets/form' %>
-</div>
-</article>
- 
+    </figure>
+    <div class="media-content">
+     
+      <%= render 'tweets/form' %>
+      
+    </div>
+    </article>
+     
+  <% end %>
 
 
 
@@ -25,10 +29,11 @@
         </div>
         <div class="media-content">
           <div class="content">
-            <strong>Darth Vader</strong><br/>
-            <small>@death_star</small><br/>
+            <strong><%= t.user.name %></strong><br/>
+            <small><%= t.user.username %></small><br/>
             <p><%= t.tweet %></p>
           </div>
+          <% if user_signed_in? %>
           <nav class="level">
             <div class="level-left is-mobile">
               <%= link_to t, class: "level-item" do %>
@@ -41,8 +46,8 @@
                <span class="icon"><i class="fa fa-trash-o" aria-hidden="true"></i></span>
               <% end %>
             </div>
-
           </nav>
+          <% end %>
         </div>
       </article>
 
