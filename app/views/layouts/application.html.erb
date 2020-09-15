@@ -22,18 +22,18 @@
         <% end %>
       
 
-        <div class="navbar-burger burger" data-target="navbarExample">
+    <!--     <div class="navbar-burger burger" data-target="navbarExample">
           <span></span>
           <span></span>
           <span></span>
-        </div>
+        </div> -->
       </div>
 
       <div id="navbarExample" class="navbar-menu">
         <div class="navbar-end">
           <div class="field is-grouped">
             <p class="control">
-              <%= link_to 'New Tweet', new_tweet_path, class: "button is-info is-inverted" %>
+              <%= link_to 'New Tweet', root_path, class: "button is-info is-inverted" %>
             </p>
             <% if user_signed_in? %>
 

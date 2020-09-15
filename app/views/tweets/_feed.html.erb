@@ -3,7 +3,7 @@
     <article class="media box">
     <figure class="media-left">
       <p class="image is-64x64">
-        <img src="https://icons-for-free.com/iconfiles/png/512/vader+icon-1320195317918959484.png">
+        <%= gravatar_image_tag(current_user.email, size: 64, alt: current_user.name) %>
       </p>
 
     </figure>
@@ -24,7 +24,7 @@
         <div class="media-left">
           
           <figure class="image is-64x64">
-             <img src="https://icons-for-free.com/iconfiles/png/512/vader+icon-1320195317918959484.png">
+            <%= gravatar_image_tag(t.user.email, size: 64, alt: t.user.name) %>
           </figure>
         </div>
         <div class="media-content">
@@ -33,7 +33,7 @@
             <small><%= t.user.username %></small><br/>
             <p><%= t.tweet %></p>
           </div>
-          <% if user_signed_in? %>
+          <% if user_signed_in? && t.user.username==current_user.username %>
           <nav class="level">
             <div class="level-left is-mobile">
               <%= link_to t, class: "level-item" do %>
