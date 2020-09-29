@@ -1,1 +1,1 @@
-A twitter demo application builded for the Oden Project Curriculum .
+A twitter demo application builded with Ruby on Rails for the Oden Project Curriculum .
